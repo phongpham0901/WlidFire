@@ -82,13 +82,17 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("X:" + PlayerPrefs.GetFloat("playerPositionX") + "Y:" + PlayerPrefs.GetFloat("playerPositionY") + "Z:" + PlayerPrefs.GetFloat("playerPositionZ"));
 
+        BackToMenu();
+    }
+
+    private void BackToMenu()
+    {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
         }
-
     }
-
+    
     public void increasePoint()
     {
         point++;
@@ -119,5 +123,5 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("SaveScore", point);
     }
-
+    
 }

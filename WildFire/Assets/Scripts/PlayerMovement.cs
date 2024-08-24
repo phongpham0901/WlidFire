@@ -59,7 +59,6 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveChange();
         }
-
     }
 
     private void MoveChange()

@@ -55,7 +55,7 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        healthAmount -= damage * Time.deltaTime;
+        healthAmount -= damage * Time.deltaTime * 1.1f;
         healthBar.fillAmount = healthAmount / 100;
     }
 
