@@ -33,6 +33,7 @@ public class SaveScore : MonoBehaviour
         PlayerPrefs.DeleteKey("playerPositionX");
         PlayerPrefs.DeleteKey("playerPositionY");
         PlayerPrefs.DeleteKey("playerPositionZ");
+        PlayerPrefs.DeleteKey("healthamount");
 
         PlayerPrefs.SetFloat("playerPositionX", 0.5f);
         PlayerPrefs.SetFloat("playerPositionY", -0.46f);

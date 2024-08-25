@@ -38,7 +38,8 @@ public class Fire : MonoBehaviour
                 AudioGame.instance.PlayDamageClip();
                 GameManager.instance.increasePoint();
                 CancelInvoke("TreeDie");
-                Destroy(gameObject, 0.1f);
+                StartCoroutine("SetGameObject");
+                //Destroy(gameObject, 0.1f);
                 Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             }
         }
@@ -62,4 +63,10 @@ public class Fire : MonoBehaviour
         tree.instance.Die();
     }
 
+    IEnumerator SetGameObject()
+    {
+        yield return new WaitForSeconds(0.1f);
+        gameObject.SetActive(false);
+    }
+    
 }

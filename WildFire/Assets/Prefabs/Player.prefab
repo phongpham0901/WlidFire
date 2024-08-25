@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 7280312534519663906}
   - component: {fileID: 7280312534519663907}
   - component: {fileID: 246595122}
-  - component: {fileID: 2934136915891859941}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -438,21 +437,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.9375
---- !u!114 &2934136915891859941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7280312534519663934}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b8a773b77578c42bf03e3cbcca0689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shuriken: {fileID: 4437704790054102881, guid: 80d4aa75bcd30d048921fb83a372f7e9, type: 3}
-  firePoint: {fileID: 0}
-  fireRate: 0.5
 --- !u!1 &7280312534783576942
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        healthAmount = PlayerPrefs.GetFloat("healthamount", 100f);
     }
 
     // Update is called once per frame
@@ -55,8 +55,9 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        healthAmount -= damage * Time.deltaTime * 1.1f;
+        healthAmount -= damage * Time.deltaTime * 0.75f;
         healthBar.fillAmount = healthAmount / 100;
+        PlayerPrefs.SetFloat("healthamount", healthAmount);
     }
 
     public void Heal(float healingAmount)
@@ -65,8 +66,8 @@ public class HealthManager : MonoBehaviour
         {
             healthAmount += healingAmount;
             healingAmount = Mathf.Clamp(healingAmount, 0, 100);
-
             healthBar.fillAmount = healthAmount / 100;
+            PlayerPrefs.SetFloat("healthamount", healthAmount);
         }
     }
 }
