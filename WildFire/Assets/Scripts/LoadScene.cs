@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+    private float timer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +16,14 @@ public class LoadScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= 7f)
+        timer += Time.deltaTime;
+
+        if(timer >= 7f)
         {
             SceneManager.LoadScene("Game");
+            timer = 0f;  // Đặt lại bộ đếm về 0
         }
-        Debug.Log(Time.time);
+
+        Debug.Log(timer);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    private HealthManager healthManager;
     [SerializeField] GameObject medal1;
     [SerializeField] GameObject medal2;
     [SerializeField] GameObject medal3;
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        healthManager = FindObjectOfType<HealthManager>();
         pointHigh = PlayerPrefs.GetInt("hightPoint");
         point = PlayerPrefs.GetInt("SaveScore");
         pointText.text = point.ToString();
@@ -104,6 +105,8 @@ public class GameManager : MonoBehaviour
     {
         point = 0;
         pointText.text = point.ToString();
+        healthManager.healthAmount = 100f;
+        PlayerPrefs.Save();
         //PlayerPrefs.DeleteKey("liveTree");
         tree.instance.live = 18;
         PlayerPrefs.SetInt("liveTree", tree.instance.live);
@@ -113,7 +116,7 @@ public class GameManager : MonoBehaviour
         player.position = new Vector3(PlayerPrefs.GetFloat("playerPositionX"), PlayerPrefs.GetFloat("playerPositionY"), PlayerPrefs.GetFloat("playerPositionZ"));
         SceneManager.LoadScene("Game");
     }
-
+    
     public void QuitToMenu()
     {
         SceneManager.LoadScene("MenuGame");

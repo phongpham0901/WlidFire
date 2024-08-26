@@ -41,7 +41,7 @@ public class SaveScore : MonoBehaviour
 
         PlayerPrefs.SetInt("liveTree", 18);
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("CutSence");
 
         PlayerPrefs.SetInt("button", 1);
     }
@@ -49,6 +49,11 @@ public class SaveScore : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+    }
+    
+    public void ClearData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
 }

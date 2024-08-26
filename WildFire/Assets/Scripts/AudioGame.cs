@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,13 @@ public class AudioGame : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        GetComponent<AudioSource>().volume = PlayerPrefs.GetInt("music", 1);
+        shootingVolume = PlayerPrefs.GetFloat("sfx", 1f);
+          damageVolume = PlayerPrefs.GetFloat("sfx", 1f);
     }
 
     public void PlayShootingClip()
